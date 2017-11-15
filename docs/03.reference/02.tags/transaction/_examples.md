@@ -1,11 +1,13 @@
-<cffunction name="updateAddress" access="remote" output="false">
-  <cfargument name="addressId" type="number" required="yes">
-  <cfargument name="newAddress" type="string" required="yes">
+<pre>
+&lt;cffunction name="updateAddress" access="remote" output="false"&gt;
+  &lt;cfargument name="addressId" type="number" required="yes"&gt;
+  &lt;cfargument name="newAddress" type="string" required="yes"&gt;
 
-  <cftransaction isolation="read_committed">
-    <cfquery name="changeAddress" datasource="#application.config.DSN#">
-  		update address set login_address = <cfqueryparam value="#arguments.newAddress#" cfsqltype="CF_SQL_VARCHAR">
-				where	id = <cfqueryparam value="#arguments.addressId#" cfsqltype="CF_SQL_INTEGER">
-    </cfquery>
-  </cftransaction>
-</cffunction>
+  &lt;cftransaction isolation="read_committed"&gt;
+    &lt;cfquery name="changeAddress" datasource="#application.config.DSN#"&gt;
+  		update address set login_address = &lt;cfqueryparam value="#arguments.newAddress#" cfsqltype="CF_SQL_VARCHAR"&gt;
+				where	id = &lt;cfqueryparam value="#arguments.addressId#" cfsqltype="CF_SQL_INTEGER"&gt;
+    &lt;/cfquery&gt;
+  &lt;/cftransaction&gt;
+&lt;/cffunction&gt;
+</pre>
